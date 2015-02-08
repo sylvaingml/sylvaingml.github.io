@@ -1,0 +1,20 @@
+# Site settings
+title: Sylvain is Coding
+email: code@SylvainGamel.fr
+description: > # this means to ignore newlines until "baseurl:"
+    This blog in my live note book for code snippets and some implementation
+    tricks.
+    
+    I post about JavaScript, Objective-C, Swift for web, iOS or OS X
+    developments. Sure I'll add more as I need other languages.
+    
+    This blog is hosted on on Github and powered by Jekyll. 
+    Feel free to explore the repository.
+
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://code.SylvainGamel.fr" # the base hostname & protocol for your site
+twitter_username: sgamel
+github_username:  sylvaingml
+
+# Build settings
+markdown: kramdown
