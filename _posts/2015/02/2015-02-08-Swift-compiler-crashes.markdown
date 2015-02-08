@@ -14,3 +14,5 @@ Don't know how to fix this. Issue seems to be tied to the closure parameter,
 but not really sure about this.
 
 Any idea?
+
+**Update** Crash can be avoided using the fully qualified name for the enum value. See last commit for details.
