@@ -14,5 +14,5 @@ of swipe gesture.
 In this sample project, actions are visible when swiping from right to left, 
 and this show a simple mean to replace the standard _delete_ action.
 
-Sample project is availabile [here](https://github.com/sylvaingml/ex-UIKit-UITableView-CustomRowActions)
+Sample project is available [here](https://github.com/sylvaingml/ex-UIKit-UITableView-CustomRowActions)
 
