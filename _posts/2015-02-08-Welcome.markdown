@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "Welcome!"
+date:   2015-02-08 13:00:00
+categories: news
+---
+
+This is the very first post on this blog.
+
+You will not find here long tutorials. 
+Mostly links about coding tips and tricks.
+
+If I were in the mood to write some tutorial there's great chance
+I post it as a new repository.
+
+When I'll post some code on Github I might post some short text about it, but I do
+not indend to write long tutorials. 
+
+So here we go. Hope you'll love it.
