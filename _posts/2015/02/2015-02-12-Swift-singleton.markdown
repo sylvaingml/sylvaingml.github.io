@@ -64,6 +64,9 @@ struct MySingleton
 Remember that a structure is passed by value, when an object will
 be passed by reference. So keep this in mind when time of choice is coming.
 
+A playground of this example is available for download 
+[here](2015-02-12-Swift-singleton/Singleton-struct.playground.zip). 
+
 ## Using a global variable
 
 Next option would be to rely on the behavior of global variables:
