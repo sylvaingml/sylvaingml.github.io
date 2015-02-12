@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Swift, implementing singleton pattern"
-date:   2015-02-12 23:30:00
+date:   2015-02-13 00:00:00
 categories: Swift
 ---
 
