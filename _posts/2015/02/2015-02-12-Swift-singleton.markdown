@@ -11,7 +11,7 @@ I've had a simple need: implementing a singleton pattern in the Swift langage.
 
 My first idea would be something like:
 
-```swift
+```Swift
 class MySingleton
 {
 	private class var instance : MySingleton?
@@ -35,7 +35,7 @@ You can anyway define a static variable in a structure.
 
 You can write something like the following:
 
-```swift
+```Swift
 struct MySingleton
 {
     // Counter to tag each new instance
@@ -63,9 +63,6 @@ struct MySingleton
 
 Remember that a structure is passed by value, when an object will
 be passed by reference. So keep this in mind when time of choice is coming.
-
-A playground of this example is available for download 
-[here](2015-02-12-Swift-singleton/Singleton-struct.playground.zip). 
 
 ## Using a global variable
 
