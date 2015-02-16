@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <title>Testing $.proxy performances.</title>
+            <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+            <script src="./js/mesure-kit.js"></script>
+	</head>
+
+<body>
+
+    <section class="container">
+        
+        <h1>Proxy compared to inline closures</h1>
+        <p>Simple test for proxy performances in jQuery.</p>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <button class="btn btn-primary" onclick="runAll()">Run all</button>
+                <button class="btn btn-warning" onclick="runBench()">Run a bench</button>
+            </div>
+        </div>
+
+    </section>
+    
+    <section class="container">
+        <h2>Tests</h2>
+        
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Direct call in closure</th>
+                    <td>Duration: <span id="closure-direct"></span></td>
+                    <td><button class="btn btn-xs btn-primary" onclick="runDirect()">Run</button></td>
+                </tr>
+
+                <tr>
+                    <th>Closure with captured indirect reference</th>
+                    <td>Duration: <span id="closure-with-capture"></span></td>
+                    <td><button class="btn btn-xs btn-primary" onclick="runFn()">Run</button></td>
+                </tr>
+                <tr>
+                    <th>Inline $.proxy()</th>
+                    <td>Duration: <span id="proxy-inlined"></span></td>
+                    <td><button class="btn btn-xs btn-primary" onclick="runProxy()">Run</button></td>
+                </tr>
+
+                <tr>
+                    <th>Cached $.proxy()</th>
+                    <td>Duration: <span id="proxy-cached"></span></td>
+                    <td><button class="btn btn-xs btn-primary" onclick="runProxy2()">Run</button></td>
+                </tr>
+
+                <tr>
+                    <th>Wrapper function</th>
+                    <td>Duration: <span id="valueFn"></span></td>
+                    <td><button class="btn btn-xs btn-primary" onclick="runFn()">Run</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+    <section class="container">
+        <h2>Summary</h2>
+        
+        <section id="summary"></section>
+
+    </section>
+
+</body>
+
+<script>
+
+/** Simple point object.
+ * 
+ * @returns {Point}
+ */
+function Point() {
+  this.x = 0.0;
+  this.y = 0.0;
+}
+
+/** Compute distance with another point.
+ * 
+ * @param {Point} otherPoint
+ * @returns {float}
+ */
+Point.prototype.dist = function(otherPoint) {
+  var dX = (this.x - otherPoint.x);
+  var dY = (this.y - otherPoint.y);
+  
+  d = Math.sqrt((dX * dX) + (dY * dY));
+  
+  return d;
+};
+
+// TESTS
+
+var p1 = new Point(0, 0);
+var p2 = new Point(3, 12);
+
+var bench = new Bench({ nbLoop: 20000, summaryId: "summary" });
+
+var proxyFn = $.proxy(p1.dist, p1);
+
+bench.addTest('closure-direct', function() { 
+    p1.dist(p2); 
+});
+
+var pt = p1; // Capture p1
+bench.addTest('closure-with-capture', function() { 
+    pt.dist(p2);
+});
+
+bench.addTest('proxy-inlined', function() { 
+    $.proxy(p1.dist, p1)(p2); 
+});
+
+var proxyFn = $.proxy(p1.dist, p1);
+bench.addTest('proxy-cached', function() { 
+    proxyFn(p2); 
+});
+
+var pt = p1; // Capture p1
+bench.addTest('valueFn', function() { 
+    pt.dist(p2);
+});
+
+function runAll() { 
+    bench.runAllTests(); 
+    bench.insertSummaryTable();
+};
+
+function runBench() { 
+    bench.runBench(50);
+    bench.insertSummaryTable();
+};
+
+function runDirect() { bench.runTest("closure-direct"); };
+
+function runFn()     { bench.runTest("closure-with-capture"); };
+
+function runProxy()  { bench.runTest("proxy-inlined"); };
+
+function runProxy2() { bench.runTest("proxy-cached"); };
+
+
+</script>
+
+</html>
