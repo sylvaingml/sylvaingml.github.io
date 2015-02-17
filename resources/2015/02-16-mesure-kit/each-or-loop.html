@@ -18,8 +18,8 @@
         <p>Looping through DOM element and replacing value.</p>
         
         <ul>
-        	<li>Number of run per test: 1000</li>
-        	<li>Number of repeat in a benchmark: 10</li>
+        	<li>Number of run per test: 1 (we are looping on 10000 nodes)</li>
+        	<li>Number of repeat in a benchmark: 50</li>
         </ul>
 
         <div class="panel panel-default">
@@ -83,13 +83,13 @@
 
 <script>
 
-var bench = new Bench({ nbLoop: 1000, summaryId: "summary" });
+var bench = new Bench({ nbLoop: 1, summaryId: "summary" });
 
 var setupTestFn = function() {
   // Create some DOM elements to loop on
   var $placeholder = $('#placeholder');
   $placeholder.html('');
-  for ( var idx = 0 ; idx < 5000 ; ++idx ) {
+  for ( var idx = 0 ; idx < 10000 ; ++idx ) {
 	$placeholder.append("<div>"+idx+"</div>");
   }
 };
@@ -142,7 +142,7 @@ function runTest() {
 }
   
 function runBench() {
-  bench.runBench(10);
+  bench.runBench(50);
   bench.insertSummaryTable();
 }
   
