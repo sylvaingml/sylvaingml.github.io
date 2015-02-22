@@ -83,7 +83,7 @@ typealias TheProperties = SomeObject.Property
 var properties = [TheProperties]()
 {% endhighlight %}
 
-Here we are. A work array definition with the type specified in the definition.
+Here we are. A working array definition with the type specified in the definition.
 
 *Can someone explain me why we need to use a type alias?* 
 
