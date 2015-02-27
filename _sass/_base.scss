@@ -82,7 +82,6 @@ li {
         margin: 0em;
         
         &:after {
-            content: ", "
         }
         &:last-child:after {
             content: "."
