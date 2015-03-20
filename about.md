@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Welcome on my coding blog.
+Welcome on my coding blog. some coding stuff in JavaScript, Swift and Objective-C. 
 
 ## This blog?
 
@@ -20,11 +20,16 @@ on OS X and iOS. As new hotness is on the Swift I will also post about experimen
 ## Me?
 
 I'm a developper. I love coding on Mac and iOS on my spare time. 
-I wrote a book, now out of print, [about Objective-C 2](http://www.macg.co/2010/12/un-précis-et-concis-consacré-à-objective-c-20-9455). 
+I wrote a book, now out of print, [about Objective-C 2][1]. 
 
-I also published another one about [OS X Automator tool](http://Automatisez.net/). 
+I also published another one about [OS X Automator tool][2]. 
 
 More on the web?
 
-- [Automatisez.net](http://Automatisez.net/), french site about OS X Automator
-- [S.G. inTech](http://SGinTech.fr/), my business face
+- [Automatisez.net][3], french site about OS X Automator
+- [S.G. inTech][4], my business face
+
+[1]:	http://www.macg.co/2010/12/un-pr%C3%A9cis-et-concis-consacr%C3%A9-%C3%A0-objective-c-20-9455
+[2]:	http://Automatisez.net/
+[3]:	http://Automatisez.net/
+[4]:	http://SGinTech.fr/
