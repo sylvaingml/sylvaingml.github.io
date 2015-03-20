@@ -14,7 +14,7 @@ Until then, how can I implement a singleton pattern in the Swift language.
 
 My first idea would be something like:
 
-```Swift
+{% highlight Swift %}
 class MySingleton
 {
 	private class var instance : MySingleton?
@@ -29,7 +29,7 @@ class MySingleton
 		return instance!
 	}
 }
-```
+{% endhighlight %}
 
 But in current Swift version, the langage does not support the ``class``variables. 
 this will be supported in version 1.2
@@ -38,7 +38,7 @@ But you can define a class variable in a structure using the ``static`` qualifie
 
 You can write something like the following:
 
-```Swift
+{% highlight Swift %}
 struct MySingleton
 {
     // Counter to tag each new instance
@@ -62,7 +62,7 @@ struct MySingleton
         return instance!
     }
 }
-```
+{% endhighlight %}
 
 ## Singleton of a class instance
 
@@ -71,7 +71,7 @@ You can easily implement a singleton object on top of stuctures.
 
 For example:
 
-```Swift
+{% highlight Swift %}
 public class SharedObject
 {
     public class var sharedInstance: SharedObject
@@ -84,7 +84,7 @@ public class SharedObject
         return Shared.instance
     }
 }
-```
+{% endhighlight %}
 
 Just make sure that the ``init`` function is not public.
 
@@ -102,7 +102,7 @@ Object won't be initialized until it is used for the first time.
 
 So you could write something like this:
 
-```Swift
+{% highlight Swift %}
 let theInstance = GlobalSingleton()
 
 class GlobalSingleton
@@ -112,7 +112,7 @@ class GlobalSingleton
         return theInstance!
     }
 }
-```
+{% endhighlight %}
 
 As the global is a lazy variable, it won't be created until the first call to 
 ``GlobalSingleton.sharedInstance()``
