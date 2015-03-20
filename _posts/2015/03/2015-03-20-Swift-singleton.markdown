@@ -1,11 +1,14 @@
 ---
 layout: post
 title:  "Swift, implementing singleton pattern"
-date:   2015-02-13 00:00:00
+date:   2015-03-20 21:00:00
 categories: Swift
 ---
 
-I've had a simple need: implementing a singleton pattern in the Swift langage.
+Current version of Swift does not support class variables. 
+We have to wait until 1.2 version to be available with iOS 8.3.
+
+Until then, how can I implement a singleton pattern in the Swift language.
 
 ## Using a ``struct``
 
@@ -31,7 +34,7 @@ class MySingleton
 But in current Swift version, the langage does not support the ``class``variables. 
 this will be supported in version 1.2
 
-You can anyway define a static variable in a structure.
+But you can define a class variable in a structure using the ``static`` qualifier.
 
 You can write something like the following:
 
@@ -61,10 +64,34 @@ struct MySingleton
 }
 ```
 
-Remember that a structure is passed by value, when an object will
-be passed by reference. So keep this in mind when time of choice is coming.
+## Singleton of a class instance
 
-## Using a global variable
+
+You can easily implement a singleton object on top of stuctures.
+
+For example:
+
+```Swift
+public class SharedObject
+{
+    public class var sharedInstance: SharedObject
+    {
+        struct Shared
+        {
+            static let instance: SharedObject = SharedObject()
+        }
+        
+        return Shared.instance
+    }
+}
+```
+
+Just make sure that the ``init`` function is not public.
+
+
+
+## Using a module global variable
+
 
 Next option would be to rely on the behavior of global variables:
 *any global variable is lazily initialized*
@@ -75,15 +102,11 @@ Object won't be initialized until it is used for the first time.
 
 So you could write something like this:
 
-```swift
+```Swift
 let theInstance = GlobalSingleton()
-
-var globalCounter = 0
 
 class GlobalSingleton
 {
-    var id = ++globalCounter
-    
     class func sharedInstance() -> GlobalSingleton
     {
         return theInstance!
@@ -100,9 +123,8 @@ So declaration of the global ``theInstance`` cannot be done in a playground.
 
 ## The end
 
-Of course you must be carefull when using the singleton pattern. 
+Of course you must be careful when using the singleton pattern. 
 This is not the best pattern to use, as this is roughly a global variable in your project.
 
-Swift is quite fun, and in some cases much simpler than Objective-C.
 
 
