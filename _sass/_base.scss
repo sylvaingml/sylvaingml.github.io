@@ -74,7 +74,20 @@ li {
     }
 }
 
-
+.category-list {
+    display: inline-block;
+    
+    .category {
+        display: inline;
+        margin: 0em;
+        
+        &:after {
+        }
+        &:last-child:after {
+            content: "."
+        }
+    }
+}
 
 /**
  * Headings
