@@ -2,7 +2,7 @@
 layout: post
 title:  "Swift and the UIAppearance proxy"
 date:   2015-02-27 13:00:00
-categories: Swift, iOS
+categories: Swift iOS
 ---
 
 I'm trying to push a bit of polish to a small app written 100% in Swift.
