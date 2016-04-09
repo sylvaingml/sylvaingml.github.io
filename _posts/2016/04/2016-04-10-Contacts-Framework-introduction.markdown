@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Contats Framwork, a first step introduction"
+title:  "Contats Framework, a first step introduction"
 date:   2016-04-10 00:15:00
 categories: Contacts,Framework,iOS,OSX
 ---
