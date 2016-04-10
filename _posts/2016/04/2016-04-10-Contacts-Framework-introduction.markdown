@@ -13,5 +13,4 @@ This playground is pretty simple and self documented.
 I will details how to access the contact data store and fetch contacts data
 using simple query or by browsing through the whole addressbook.
 
-
 [gitProject]: https://github.com/sylvaingml/Contacts_intro_Playground
