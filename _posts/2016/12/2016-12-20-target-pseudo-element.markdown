@@ -16,7 +16,7 @@ are being navigated to.
 I'm setup a small example on this
 [codepen](http://codepen.io/sylvaingml/full/PbLNwg/).
 
-<p data-height="265" data-theme-id="0" data-slug-hash="PbLNwg" data-default-tab="html,result" data-user="sylvaingml" data-embed-version="2" data-pen-title=":target pseudo-class" class="codepen">See the Pen <a href="http://codepen.io/sylvaingml/pen/PbLNwg/">:target pseudo-class</a> by Sylvain Gamel (<a href="http://codepen.io/sylvaingml">@sylvaingml</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="PbLNwg" data-default-tab="html" data-user="sylvaingml" data-embed-version="2" data-pen-title=":target pseudo-class" class="codepen">See the Pen <a href="http://codepen.io/sylvaingml/pen/PbLNwg/">:target pseudo-class</a> by Sylvain Gamel (<a href="http://codepen.io/sylvaingml">@sylvaingml</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 This is a classical and simple way to build a basic collapsed menu,
