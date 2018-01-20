@@ -18,3 +18,5 @@ github_username:  sylvaingml
 
 # Build settings
 markdown: kramdown
+
+exclude: [ "assets", "scripts", "vendor", "Gemfile*" ]
