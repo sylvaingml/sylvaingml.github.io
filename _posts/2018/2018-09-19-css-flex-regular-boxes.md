@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CSS Position"
+title:  "Get flex box items with equals width"
 date:   2018-09-19 13:00:00 CEST’
 categories: CSS
 ---
