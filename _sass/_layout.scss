@@ -8,6 +8,8 @@
 
     // Positioning context for the mobile navigation icon
     position: relative;
+    
+    background-color: $grey-color-ultra-light;
 }
 
 .site-title {
@@ -40,23 +42,33 @@
             margin-left: 20px;
         }
     }
+    
+    button {
+        border: none;
+        background-color: white;
+    }
 
     @include media-query($on-palm) {
         position: absolute;
         top: 9px;
         right: 30px;
         background-color: $background-color;
-        border: 1px solid $grey-color-light;
+        border: 1px solid transparent;
         border-radius: 5px;
         text-align: right;
 
         .menu-icon {
+            $icon-width:  18px;
+            $icon-height: 15px;
+            $icon-vpad: 8px;
+            $icon-hpad: 8px;
+            
             display: block;
             float: right;
-            width: 36px;
-            height: 26px;
+            width: $icon-width + 2 * $icon-hpad;
+            height: $icon-height + 2 * $icon-vpad;
             line-height: 0;
-            padding-top: 10px;
+            padding: $icon-vpad $icon-hpad;
             text-align: center;
 
             > svg {
@@ -74,9 +86,15 @@
             display: none;
         }
 
-        &:hover .trigger {
+        &.show-menu {
+            border-color: $grey-color-light;
+        }
+        &.show-menu .trigger {
             display: block;
-            padding-bottom: 5px;
+
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-bottom: 4px;
         }
 
         .page-link {
@@ -91,9 +109,17 @@
 /**
  * Site footer
  */
+footer .wrapper {
+    flex-direction: column;
+    align-items: end;
+}
+
+
 .site-footer {
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
+    
+    background-color: $grey-color-ultra-light;
 }
 
 .footer-heading {
@@ -109,7 +135,7 @@
 
 .footer-col-wrapper {
     font-size: 15px;
-    color: $grey-color;
+    color: $grey-color-dark;
     margin-left: -$spacing-unit / 2;
     @extend %clearfix;
 }
@@ -174,7 +200,12 @@
     list-style: none;
 
     > li {
-        margin-bottom: $spacing-unit;
+        margin-bottom: $spacing-unit / 1.5;
+    }
+    
+    .post-meta + h2 {
+        margin-top: 0;
+        margin-bottom: $spacing-unit / 1.5;
     }
 }
 
@@ -194,7 +225,11 @@
  * Posts
  */
 .post-header {
-    margin-bottom: $spacing-unit;
+    margin-bottom: $spacing-unit * 1.5;
+    
+    h1 {
+        margin-bottom: $spacing-unit / 2;
+    }
 }
 
 .post-title {

@@ -1,0 +1,44 @@
+button.btn-screenshot {
+    border: 1px solid $grey-color;
+    border-radius: 5px;
+
+    background-color: white;
+}
+
+
+.screenshot-vignette {
+    display: flex;
+
+    flex-direction: column;
+    @include media-query-from($on-palm) {
+        flex-direction: row;
+    }
+
+    margin: 2rem 0;
+
+    $stamp-width: 12rem;
+
+    .image {
+        @include media-query-from($on-palm) {
+            flex: 1 1 $stamp-width;
+        }   
+    }
+
+    .description {
+        @include media-query-from($on-palm) {
+            flex: 1 1 calc(100% - #{ $stamp-width });
+        }        
+        padding-left: 1rem;
+    }
+
+    button.btn-screenshot {
+        display: block;
+        max-width: 80%;
+        margin: 0 auto 1rem auto;
+        
+        @include media-query-from($on-palm) {
+            max-width: 100%;
+            margin: 0;
+        }
+    }
+}

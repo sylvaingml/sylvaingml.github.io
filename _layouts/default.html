@@ -7,14 +7,21 @@
 
     {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
+    <div class="page-content" role="main">
+      <main role="main" class="wrapper">
         {{ content }}
-      </div>
+      </main>
     </div>
 
     {% include footer.html %}
 
   </body>
 
+  <script lang="JavaScript">
+(function() {
+    var mainNav = new NavMenu('main-nav');
+    
+    SimpleModal.createAll();
+})();
+  </script>
 </html>

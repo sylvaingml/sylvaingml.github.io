@@ -1,0 +1,46 @@
+{% assign imgSrc=include.src %}
+{% assign imgAlt=include.imgAlt %}
+{% assign description=include.description %}
+{% assign imgAlign=include.align %} 
+{% if description %} 
+  {% assign imgColSpec="col-xs-12 col-sm-6 col-md-4" %} 
+{% else %} 
+  {% assign imgColSpec="col-xs-12 mb-1" %} 
+{% endif %}
+
+{% assign modalId=(imgSrc|replace: ".", "_"|replace: "/", "_") %}
+{% assign closeLabel="close" %}
+
+<div class="screenshot-vignette {{ imgAlign }}">
+  <div class="image">
+    <button type="button" class="btn btn-screenshot" 
+            data-toggle="simple-modal" data-target-id="{{ modalId }}">
+      <img src="{{ imgSrc | prepend: "resources/" | relative_url }}" alt="{{ imgAlt | normalize_whitespace }}" class="img-fluid mb-1">
+    </button>
+  </div>
+  {% if description %}
+  <div class="description">
+    {{ description | markdownify }}
+  </div>
+  {% endif %}
+</div>
+
+<div id="{{ modalId }}" class="modal" tabindex="-1" role="dialog">
+  <button type="button" class="close" data-action="close"
+          aria-label="{{closeLabel}}">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+        <img src="{{ imgSrc | prepend: "/" | prepend: "resources/" | relative_url }}" 
+             alt="{{ imgAlt | normalize_whitespace }}" 
+             class="img-fluid mb-0">
+
+        {{ description | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>

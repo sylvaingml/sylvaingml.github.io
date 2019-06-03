@@ -1,0 +1,57 @@
+.modal { 
+    &:not(.show-modal) {
+        display: none;
+    }
+
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    padding-top: 5rem;
+    @include media-query-from($on-palm) {
+        padding-top: 0;
+    }
+    
+    background-color: rgba(255,255,255, 0.95);
+
+    button.close {
+        position: absolute;
+        right: -2px;
+        top: 12px;
+        
+        border: none;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+
+        color: white;
+        background: black;
+        
+        font-size: 2rem;
+        padding: 8px 16px;
+        
+        & > span {
+            vertical-align: .1rem; // Adjust close icon in the center
+        }
+    }
+}
+
+
+.modal .modal-dialog {
+    max-width: calc(100vw - 24px);
+    margin: 0 auto;
+
+    @include media-query-from($on-palm) {
+        max-width: calc(100vw - 64px);
+    }
+}
+
+.modal .modal-content {
+    display: flex;
+    flex-direction: column;
+    
+    max-height: 100vh;
+    overflow-y: scroll;
+}

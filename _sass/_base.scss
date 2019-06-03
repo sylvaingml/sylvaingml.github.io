@@ -8,7 +8,12 @@ dl, dd, ol, ul, figure {
     padding: 0;
 }
 
-
+.sr-only {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    font-size: 0 !important;
+}
 
 /**
  * Basic styling
@@ -35,7 +40,17 @@ ul, ol, dl, figure,
     margin-bottom: $spacing-unit / 2;
 }
 
+h1 {
+    margin: (2 * $spacing-unit) 0;
+}
 
+h2 {
+    margin: (1.5 * $spacing-unit) 0;
+}
+
+h3 {
+    margin: (1.25 * $spacing-unit) 0;
+}
 
 /**
  * Images
@@ -167,13 +182,17 @@ pre {
  * Wrapper
  */
 .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
     max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
     margin-right: auto;
     margin-left: auto;
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
-    @extend %clearfix;
+    //@extend %clearfix;
 
     @include media-query($on-laptop) {
         max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
