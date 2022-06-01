@@ -206,3 +206,6 @@ This difference can really make a difference when you develop for
 low-end devices (yes, I mean mobiles and tablets).
 
 So if you have any doubt, try tocompare solutions with mesure-kit.
+
+-----
+Updated example on 2022-06-01 to use non deprecated jQuery and Bootstrap versions.
